@@ -7,7 +7,7 @@ Analyzing message data for disaster response
 - numpy==1.22.3
 - sqlalchemy==1.4.41
 - re==2.2.1
-- nltk=3.7
+- nltk==3.7
 - sklearn==1.1.0
 - json==2.0.9
 - plotly==5.9.0
@@ -31,11 +31,15 @@ run
 ### Content
 
 #### Machine learning pipeline
-I use LinearSVC Algorithm with parameter
+Use LinearSVC Algorithm with parameter
 
 [ C=1, loss='hinge', max_iter=50000, tol=0.001 ]
 
 #### Web app
+- Test here
+
+[https://disaster-response-project001.herokuapp.com/](https://disaster-response-project001.herokuapp.com/)
+
 - Main page
 ![Main_page](https://github.com/NineNatthanarong/Disaster-Response-Project/blob/master/pic/shot1.png)
 ![Main_page](https://github.com/NineNatthanarong/Disaster-Response-Project/blob/master/pic/shot2.png)

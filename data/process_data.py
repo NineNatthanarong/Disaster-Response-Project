@@ -47,4 +47,4 @@ df.drop(['original'],axis=1,inplace=True)
 
 # Exported clean data
 engine = sqlalchemy.create_engine('sqlite:///'+str(pathlib.Path(__file__).parent.resolve())+'/DisasterResponse.db')
-df.to_sql('DisasterResponse', engine, index=False)
+df.to_csv('DisasterResponse.csv', index=False)
