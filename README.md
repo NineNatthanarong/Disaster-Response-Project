@@ -37,10 +37,10 @@ I use LinearSVC Algorithm with parameter
 
 #### Web app
 - Main page
-![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
-![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
+![Main_page](https://github.com/NineNatthanarong/Disaster-Response-Project/blob/master/pic/shot1.png)
+![Main_page](https://github.com/NineNatthanarong/Disaster-Response-Project/blob/master/pic/shot2.png)
 - Analysis page
-![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
+![Analysis_page](https://github.com/NineNatthanarong/Disaster-Response-Project/blob/master/pic/shot3.png)
 ### File Description
 **app/run.py** -> Python file to run flask app
 
