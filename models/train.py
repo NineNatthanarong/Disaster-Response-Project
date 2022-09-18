@@ -56,6 +56,39 @@ def tokenize(text):
 
     return clean_tokens
 
+# function to calculate f1 score precision and recall
+def metrics(model,X_test,y_test):
+    """
+    function to calculate f1 score precision and recall
+
+    Args:
+        model (model): List of text or words to tokenize
+        X_test (List,String): List or String to calculate
+        y_test (List,String): List or String to calculate
+
+    Returns:
+        ndarray:  Recall, f1 Score , Precision
+    """
+    Precision = []
+    F1Score = []
+    Recall = []
+    from sklearn.metrics import precision_score,f1_score,recall_score
+    for i in range(len(y_test)):
+        y_pred = model.predict(X_test)[i]
+        Precision.append(precision_score(y_test[i],y_pred,average='weighted'))
+        F1Score.append(f1_score(y_test[i],y_pred,average='weighted'))
+        Recall.append(recall_score(y_test[i],y_pred,average='weighted'))
+    npPrecision = np.array(Precision) 
+    npF1Score = np.array(F1Score)
+    npRecall = np.array(Recall)
+    npPrecision = npPrecision[npPrecision > 0]
+    npF1Score = npF1Score[npF1Score > 0]
+    npRecall = npRecall[npRecall > 0]
+    print("Precision",np.mean(npPrecision))
+    print("Recall   ",np.mean(npRecall))
+    print("F1Score  ",np.mean(npF1Score))
+    return np.mean(npPrecision),np.mean(npRecall),np.mean(npF1Score)
+
 ## Machine learning pipeline ##
 
 pipeline = Pipeline([
@@ -73,10 +106,15 @@ Y = df.iloc[:,3:]
 X = df['message'].values.tolist()
 indexY = df.iloc[:,3:].columns[np.mean(Y,axis=0) != 0]
 Y = Y[indexY].values.tolist()
+X_train, X_test, y_train, y_test = train_test_split(X, Y,test_size=0.1,shuffle=True)
 
 ## Train the model ##
 
-pipeline.fit(X,Y)
+pipeline.fit(X_train, y_train)
+
+## Show score ##
+
+metrics(pipeline,X_test,y_test)
 
 ## Export model ##
 

@@ -32,7 +32,9 @@ run
 
 #### Machine learning pipeline
 Use LinearSVC Algorithm with parameter
-
+- Precision 0.9571006279772363
+- Recall    0.9474695707879563
+- F1Score   0.942995474232156
 [ C=1, loss='hinge', max_iter=50000, tol=0.001 ]
 
 #### Web app
