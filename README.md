@@ -21,12 +21,26 @@ run with python3.*
 
 ### Run app
 run with python3.*
-
+#### flask app
 set path
 `cd app`
 
 run
 `python run.py`
+
+#### ETL process data
+set path
+`cd data`
+
+run
+`python process_data.py`
+
+####  Create model
+set path
+`cd models`
+
+run
+`python train.py`
 
 ### Content
 
